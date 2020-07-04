@@ -2,8 +2,9 @@
 {% block widgets %}{% endblock widgets %}
 {% block title %}{{ block.super }}| User Login{% endblock title %}
 {% block content %}
-<div class="row my-4">
-    <div class="col-md-12">
+{% load static %}
+<div class="row my-4" style="background-image: url({% static 'website/images/log2.jpg'%}) ">
+    <div class="col-md-12" >
         {% if messages %}
         {% for message in messages %}
         <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -15,7 +16,7 @@
         {% endfor %}
         {% endif %}
     </div>
-    <div class="col-md-4 offset-md-4" style="margin-top:30px; margin-bottom: 120px">
+    <div class="col-md-4 offset-md-4" style="margin-top:60px; margin-bottom: 100px">
         <div class="card">
             <h5 class="card-header text-center">User Login</h5>
             <div class="card-body">

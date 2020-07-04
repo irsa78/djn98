@@ -1,10 +1,11 @@
 from django.urls import path
 # from django.contrib.auth.views import LoginView, PasswordResetView, PasswordResetDoneView,\
 #     PasswordResetConfirmView, PasswordResetCompleteView,TemplateView
-from django.contrib.auth.views import LoginView, PasswordResetView, PasswordResetDoneView,\
-    PasswordResetConfirmView, PasswordResetCompleteView,TemplateView
+from django.contrib.auth.views import  PasswordResetView, PasswordResetDoneView,\
+    PasswordResetConfirmView, PasswordResetCompleteView,TemplateView,LoginView
 from .views import LogoutView, RegisterView,baseView
-
+from django.conf.urls import url
+from .views import student_show
 urlpatterns = [
     # path('home', HomePageView.as_view(), name='home'),
     path('home/',TemplateView.as_view(template_name='home.html'), name='home'),
@@ -35,4 +36,6 @@ urlpatterns = [
          PasswordResetConfirmView.as_view(), name='password_reset_confirm'),
     path('password_reset/complete/', PasswordResetCompleteView.as_view(),
          name='password_reset_complete'),
+    # path('index',student_show)
+    path('index/',student_show, name = 'student_show'),
 ]
